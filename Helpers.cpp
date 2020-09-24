@@ -4,5 +4,6 @@
 double powSum(int a, int b) 
 {
 	double exponent = 2;
-	return pow(static_cast<double>(a + b), exponent);
+	double summa = static_cast<double>(a + b);
+	return pow(summa, exponent);
 }
