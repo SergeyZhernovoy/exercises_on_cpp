@@ -3,9 +3,19 @@
 
 #include <iostream>
 
+void print() 
+{
+    std::cout << "Hello Skillbox!\n";
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    print();
+    int x = 100;
+    int y = x + 100;
+    int mult = x * y;
+    int random = 1002;
+    std::cout << mult << "\t\t" << random;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
