@@ -3,8 +3,6 @@
 
 #define SIZE 10
 
-
-
 int main()
 {
 	int array[SIZE][SIZE];
@@ -34,8 +32,6 @@ int main()
 		sum += array[i][j];
 	}
 	std::cout << "sum = " << sum;
-
-
 }
 
 
