@@ -1,40 +1,41 @@
 ﻿#include <iostream>
+#include <time.h>
 
-#define COUNT 10
+#define SIZE 10
 
-void printNumber(int, bool);
 
 
 int main()
 {
-	for (int number = 0; number <= COUNT; number++)
+	int array[SIZE][SIZE];
+	struct tm newtime;
+	__time64_t long_time;
+	_time64(&long_time);
+	_localtime64_s(&newtime, &long_time);
+
+	std::cout << "initialize two-dimensional array with print"<<std::endl;
+	for (int i = 0; i < SIZE; i++)
 	{
-		if (number % 2 == 0)
-		{
-			std::cout << number << std::endl;
+		for (int j = 0; j < SIZE; j++) {
+			array[i][j] = i + j;
+			std::cout << array[i][j]  <<"\t";
 		}
+		std::cout << std::endl;
 	}
 
-	std::cout << std::endl;
-	std::cout << "print EVEN number from 0 to " << COUNT << std::endl;
-	printNumber(COUNT, true);
+	int sum = 0;
+	int i = newtime.tm_mday % SIZE;
+	std::cout << std::endl << "current day = " << newtime.tm_mday << std::endl;
+	std::cout << std::endl  << "index i = " << i << std::endl << std::endl;
 
-	std::cout << std::endl;
-	std::cout << "print ODD number from 0 to " << COUNT << std::endl;
-	printNumber(COUNT, false);
+	std::cout << "print sum element string array" << std::endl;
+	for (int j = 0; j < SIZE; j++)
+	{
+		sum += array[i][j];
+	}
+	std::cout << "sum = " << sum;
+
 
 }
 
-
-void printNumber(int counter, bool branch)
-{
-	std::cout << std::endl;
-	for (int number = 0; number <= COUNT; number++) {
-		int EvenOdd = branch == true ? 0 : 1;
-		if (number % 2 == EvenOdd) {
-			std::cout << number << std::endl;
-		}
-	}
-	std::cout << std::endl;
-}
 
