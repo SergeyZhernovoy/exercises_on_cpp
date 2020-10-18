@@ -1,110 +1,44 @@
 #include <iostream>
-#include "Stack.h"
+#include <ctime>
+#include "Animal.h"
+#include "Cat.h"
+#include "Dog.h"
+#include "Piggy.h"
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
+	std::cout << "Изучение наследования" << std::endl << std::endl;
+	std::cout << "Создаем массив указателей на класс Animal" << std::endl;
+	Animal* animals[20];
+	unsigned random_value = 3;
+	srand(time(0));
+	for (int index = 0; index < 20; index++)
+	{
+		unsigned random_value = rand() % 3 + 1;
+		if (random_value == 1)
+		{
+			animals[index] = new Cat;
+		}
 
-	std::cout << "work with stack int  " << std::endl << std::endl;
-	Stack<int> stack;
+		if (random_value == 2)
+		{
+			animals[index] = new Dog;
+		}
 
-	stack.push(1);
-	std::cout << "push to stack = " << 1 << std::endl;
-	stack.push(0);
-	std::cout << "push to stack = " << 0 << std::endl;
-	stack.push(9);
-	std::cout << "push to stack = " << 9 << std::endl;
-	stack.push(8);
-	std::cout << "push to stack = " << 8 << std::endl;
-	stack.push(7);
-	std::cout << "push to stack = " << 7 << std::endl;
-	stack.push(6);
-	std::cout << "push to stack = " << 6 << std::endl;
-	stack.push(5);
-	std::cout << "push to stack = " << 5 << std::endl;
-	stack.push(4);
-	std::cout << "push to stack = " << 4 << std::endl;
-	stack.push(3);
-	std::cout << "push to stack = " << 3 << std::endl;
-	stack.push(2);
-	std::cout << "push to stack = " << 2 << std::endl << std::endl;
-	std::cout << "current  stack size = " << stack.size() << std::endl << std::endl;
-	stack.push(1);
-	std::cout << "push to stack = " << 1 << std::endl;
-	stack.push(7);
-	std::cout << "push to stack = " << 7 << std::endl;
-	stack.push(6);
-	std::cout << "push to stack = " << 6 << std::endl;
-	stack.push(4);
-	std::cout << "push to stack = " << 4 << std::endl;
-	stack.push(3);
-	std::cout << "push to stack = " << 3 << std::endl;
-	stack.push(2);
-	std::cout << "push to stack = " << 2 << std::endl << std::endl;
-	std::cout << "current  stack size = " << stack.size() << std::endl << std::endl;
+		if (random_value == 3)
+		{
+			animals[index] = new Piggy;
+		}
+	}
 
-	stack.push(1);
-	std::cout << "push to stack = " << 1 << std::endl;
-	stack.push(4);
-	std::cout << "push to stack = " << 4 << std::endl;
-	stack.push(2);
-	std::cout << "push to stack = " << 2 << std::endl;
-	stack.push(1);
-	std::cout << "push to stack = " << 1 << std::endl;
-	stack.push(5);
-	std::cout << "push to stack = " << 5 << std::endl << std::endl;
-
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl;
-	std::cout << "pop from stack = " << stack.pop() << std::endl << std::endl;
-
-	std::cout << "work with stack float  " << std::endl << std::endl;
-	//
-	std::cout << "push to stack2 = " << 1 << std::endl;
-	Stack<float> stack2;
-
-	stack2.push(1.0f);
-	std::cout << "push to stack2 = " << 1 << std::endl;
-	stack2.push(0.0f);
-	std::cout << "push to stack2 = " << 0 << std::endl;
-	stack2.push(9.0f);
-	std::cout << "push to stack2 = " << 9 << std::endl;
-	stack2.push(8.0f);
-	std::cout << "push to stack2 = " << 8 << std::endl;
-	stack2.push(1.0f);
-	std::cout << "push to stack2 = " << 1 << std::endl;
-	stack2.push(4.0f);
-	std::cout << "push to stack2 = " << 4 << std::endl;
-	stack2.push(3.0f);
-	std::cout << "push to stack2 = " << 3 << std::endl;
-	stack2.push(2.0f);
-	std::cout << "push to stack2 = " << 2 << std::endl;
-	stack2.push(1.0f);
-	std::cout << "push to stack2 = " << 1 << std::endl;
-	stack2.push(5.0f);
-	std::cout << "push to stack2 = " << 5 << std::endl << std::endl;
-
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
-	std::cout << "pop from stack2 = " << stack2.pop() << std::endl;
+	for (auto& animal : animals)
+	{
+		std::cout << std::endl;
+		std::cout << "Animal says = ";
+		animal->voice();
+		std::cout << std::endl;
+	}
 
 	return 0;
 }
