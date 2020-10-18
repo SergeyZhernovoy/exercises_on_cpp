@@ -38,6 +38,8 @@ int main()
 		std::cout << "Animal says = ";
 		animal->voice();
 		std::cout << std::endl;
+		delete animal;
+		std::cout << std::endl;
 	}
 
 	return 0;

@@ -1,5 +1,4 @@
 #include "Piggy.h"
-#include <iostream>
 
 void Piggy::voice() const
 {

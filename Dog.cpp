@@ -1,5 +1,5 @@
 #include "Dog.h"
-#include <iostream>
+
 
 void Dog::voice() const
 {

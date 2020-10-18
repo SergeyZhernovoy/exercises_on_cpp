@@ -1,5 +1,5 @@
 #include "Animal.h"
-#include <iostream>
+
 
 void Animal::voice() const
 {
